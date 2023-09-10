@@ -1,0 +1,43 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int binary(int n){
+    int i=0;
+    
+    int ans=0;
+    while(n!=0){
+       int bit=n&1;
+        ans=(bit*pow(10,i)+ans);
+        i++;
+        n=n>>1;
+    }
+    return ans;
+   
+}
+int setcount(int m){
+     m= binary(m);
+    
+    int mbit=0;
+    int ans=0;
+    
+    while(m!=0){
+        mbit=m%10;
+         if(mbit==1){
+       ans=ans+mbit; 
+    }
+        m=m/10;
+       
+    }
+    return ans;
+    return m;
+    
+    
+}
+
+int main(){
+    int a,b,c=0;
+    cin>>a>>b;
+   int ans = setcount(a)+setcount(b);
+   cout<<ans;
+    return 0;
+}
